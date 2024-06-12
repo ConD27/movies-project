@@ -1,6 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function NavBar() {
   return (
@@ -9,9 +11,15 @@ function NavBar() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#about">Acerca de</Nav.Link>
-            <Nav.Link href="#contact">Contacto</Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link>Inicio</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/about">
+              <Nav.Link>Acerca de</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/contact">
+              <Nav.Link>Contacto</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>
